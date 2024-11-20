@@ -37,22 +37,75 @@ Wang A. et al., [Fully Unsupervised Dynamic MRI Reconstruction via Diffeo-Tempor
 
 Scanvic J. et al., [Self-Supervised Learning for Image Super-Resolution and Deblurring](https://arxiv.org/abs/2312.11232), 2024.
 
-+ DeepInverse examples
+Sechaud V. et al., [Equivariance-based self-supervised learning for audio signal recovery from clipped measurements](https://arxiv.org/abs/2409.15283), 2024.
 
-### Measurement subsampling
+- Code tutorial: [Self-supervised learning with Equivariant Imaging for MRI | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_equivariant_imaging.html)
+- Code tutorial: [Image transformations for Equivariant Imaging | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_ei_transforms.html)
+
+### Multi-operator algorithms
 
 - Yaman + example
 - Millard & Chiew, Noise2Self, Noise2Inverse
-- Noise2Noise
+- Noise2Inverse, Noise2Void, Noise2Self
 - Artifact2Artifact, Phase2Phase + example
 - AmbientDiffusion - refer to tutorial
+- Tachella J. et al., [Unsupervised Learning From Incomplete Measurements for Inverse Problems](https://arxiv.org/abs/2201.12151)
+
+- Code tutorial: [Self-supervised learning with measurement splitting | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_splitting_loss.html)
+- Code tutorial: [Self-supervised MRI reconstruction with Artifact2Artifact | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_artifact2artifact.html)
+- Code tutorial: [Self-supervised learning from incomplete measurements of multiple operators | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_multioperator_imaging.html)
+
+#### Denoising algorithms
+
+Le Montagner et al., [An Unbiased Risk Estimator for Image Denoising in the Presence of Mixed Poisson-Gaussian Noise](https://ieeexplore.ieee.org/abstract/document/6714502)
+
+Tachella J. et al., [UNSURE: Unknown Noise level Stein's Unbiased Risk Estimator](https://arxiv.org/abs/2409.01985)
+
+Eldar Y., [Generalized SURE for Exponential Families: Applications to Regularization](https://ieeexplore.ieee.org/document/4663926)
+
+Lehtinen J. et al., [Noise2Noise: Learning Image Restoration without Clean Data](https://arxiv.org/abs/1803.04189)
+
+Huang T. et al., [Neighbor2Neighbor: Self-Supervised Denoising from Single Noisy Images](https://arxiv.org/abs/2101.02824), 2021.
+
+Pang T. et al., [Recorrupted-to-Recorrupted: Unsupervised Deep Learning for Image Denoising](https://openaccess.thecvf.com/content/CVPR2021/papers/Pang_Recorrupted-to-Recorrupted_Unsupervised_Deep_Learning_for_Image_Denoising_CVPR_2021_paper.pdf)
+
+- Code tutorial: [Self-supervised denoising with the SURE loss | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_sure_denoising.html)
+- Code tutorial: [Self-supervised denoising with the UNSURE loss | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_unsure.html)
+- Code tutorial: [Self-supervised denoising with the Neighbor2Neighbor loss | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/self-supervised-learning/demo_n2n_denoising.html)
 
 ### Generative models
 
-- AmbientGAN, UAIR, CycleGAN + GAN example
 - Deep Image Prior
 - CoIL, Ultra-NeRF
-- Ground-truth-free diffusion: AmbientDiffusion, GSURE-Diffusion etc.
+
+#### Generative adversarial models
+
+Bora A. et al., [AmbientGAN: Generative models from lossy measurements](https://openreview.net/forum?id=Hy7fDog0b)
+
+Pajot A. et al., [Unsupervised Adversarial Image Reconstruction](https://openreview.net/forum?id=BJg4Z3RqF7)
+
+Li B. et al., [Progressive dual-domain-transfer cycleGAN for unsupervised MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S0925231223010573)
+
+#### Diffusion models
+
+Daras G. et al., [Ambient Diffusion: Learning Clean Distributions from Corrupted Data](https://arxiv.org/abs/2305.19256)
+
+Kawar B. et al., [GSURE-Based Diffusion Model Training with Corrupted Data](https://arxiv.org/abs/2305.13128)
+
+- Code tutorial: [Imaging inverse problems with adversarial networks | DeepInverse](https://deepinv.github.io/deepinv/auto_examples/adversarial-learning/demo_gan_imaging.html)
+
+Aside: Deep model-based approaches (DMBA)
+
+- Concise overview in [CoIL paper](https://arxiv.org/pdf/2102.05181 "https://arxiv.org/pdf/2102.05181") section 2
+- [Kamilov 2022 DMBA Overview](https://arxiv.org/abs/2203.17061 "https://arxiv.org/abs/2203.17061")
+- Inference-time optimisation procedures: (note these are not directly competitive with above frameworks, as these aren’t used to train the model - they assume a separately trained model, either sup or unsupervised)
+    - PnP, RED, RARE
+    - DRP
+    - SelfDEQ?
+
+- Architectures:
+    - Deep unrolling/unfolding
+    - Deep cascade
 
 ## Metrics
 
@@ -70,7 +123,6 @@ Scanvic J. et al., [Self-Supervised Learning for Image Super-Resolution and Debl
 ### Remote sensingg
 
 - Pan sharpening: structural measurement consistency, PanGan, QNR
-
 
 ## Foundations
 
